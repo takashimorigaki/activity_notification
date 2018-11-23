@@ -15,12 +15,12 @@ module ActivityNotification
         # Belongs to target instance of this notification as polymorphic association.
         # @scope instance
         # @return [Object] Target instance of this notification
-        belongs_to :target,        { polymorphic: true }.merge(Rails::VERSION::MAJOR >= 5 ? {} : { required: true })
+        belongs_to :target,        polymorphic: true, required: true
 
         # Belongs to notifiable instance of this notification as polymorphic association.
         # @scope instance
         # @return [Object] Notifiable instance of this notification
-        belongs_to :notifiable,    { polymorphic: true }.merge(Rails::VERSION::MAJOR >= 5 ? {} : { required: true })
+        belongs_to :notifiable,    polymorphic: true, required: true
 
         # Belongs to group instance of this notification as polymorphic association.
         # @scope instance
